@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- lien font familly -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo">Ajouter un nouveau dossier</button>
+
+        <div class="card shadow mt-2 mb-4">
+
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Les dossiers</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Prenom</th>
+                                <th>Nom</th>
+                                <th>CIN</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Escale</th>
+                                <th>prix</th>
+                                <th>Action </th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Prenom</th>
+                                <th>Nom</th>
+                                <th>CIN</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Escale</th>
+                                <th>prix</th>
+                                <th>Action </th>
+
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Ville depart</label>
+                        <select name="" class="form-control" id="villeDepart">
+                            <option value="">Select City</option>
+                            <option value="Azemmour">Azemmour</option>
+                            <option value="Berrechid">Berrechid</option>
+                            <option value="Boulaouane">Boulaouane</option>
+                            <option value="Bouskoura">Bouskoura</option>
+                            <option value="Bouznika">Bouznika</option>
+                            <option value="Casablanca">Casablanca</option>
+                            <option value="Dar Bouazza">Dar Bouazza</option>
+                            <option value="El Jadida">El Jadida</option>
+                            <option value="Guisser">Guisser</option>
+                            <option value="Mediouna">Mediouna</option>
+                            <option value="Mellila">Mellila</option>
+                            <option value="Mohammedia">Mohammedia</option>
+                            <option value="Moulay Abdallah">Moulay Abdallah</option>
+                            <option value="Oulad Frej">Oulad Frej</option>
+                            <option value="Riah">Riah</option>
+                            <option value="Settat">Settat</option>
+                            <option value="Sidi Bennour">Sidi Bennour</option>
+                            <option value="Sidi Smai'il">Sidi Smai'il</option>
+                            <option value="Tit Mellil">Tit Mellil</option>
+                        </select>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ville arrive</label>
+                    
+                            <select name="" class="form-control" id="villeArrive">
+                                <option value="">Select City</option>
+                                <option value="Azemmour">Azemmour</option>
+                                <option value="Berrechid">Berrechid</option>
+                                <option value="Boulaouane">Boulaouane</option>
+                                <option value="Bouskoura">Bouskoura</option>
+                                <option value="Bouznika">Bouznika</option>
+                                <option value="Casablanca">Casablanca</option>
+                                <option value="Dar Bouazza">Dar Bouazza</option>
+                                <option value="El Jadida">El Jadida</option>
+                                <option value="Guisser">Guisser</option>
+                                <option value="Mediouna">Mediouna</option>
+                                <option value="Mellila">Mellila</option>
+                                <option value="Mohammedia">Mohammedia</option>
+                                <option value="Moulay Abdallah">Moulay Abdallah</option>
+                                <option value="Oulad Frej">Oulad Frej</option>
+                                <option value="Riah">Riah</option>
+                                <option value="Settat">Settat</option>
+                                <option value="Sidi Bennour">Sidi Bennour</option>
+                                <option value="Sidi Smai'il">Sidi Smai'il</option>
+                                <option value="Tit Mellil">Tit Mellil</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date depart</label>
+                        <input type="date" name="" id="dateDepart" min="" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Heure depart</label>
+                        <input type="time" name="" id="heureDepart" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nombre places</label>
+                        <input type="number" name="" id="nbPlaces" min="0" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ville escale</label>
+                    
+                            <select name="" class="form-control" id="escale">
+                                <option value="">Select City</option>
+                                <option value="Azemmour">Azemmour</option>
+                                <option value="Berrechid">Berrechid</option>
+                                <option value="Boulaouane">Boulaouane</option>
+                                <option value="Bouskoura">Bouskoura</option>
+                                <option value="Bouznika">Bouznika</option>
+                                <option value="Casablanca">Casablanca</option>
+                                <option value="Dar Bouazza">Dar Bouazza</option>
+                                <option value="El Jadida">El Jadida</option>
+                                <option value="Guisser">Guisser</option>
+                                <option value="Mediouna">Mediouna</option>
+                                <option value="Mellila">Mellila</option>
+                                <option value="Mohammedia">Mohammedia</option>
+                                <option value="Moulay Abdallah">Moulay Abdallah</option>
+                                <option value="Oulad Frej">Oulad Frej</option>
+                                <option value="Riah">Riah</option>
+                                <option value="Settat">Settat</option>
+                                <option value="Sidi Bennour">Sidi Bennour</option>
+                                <option value="Sidi Smai'il">Sidi Smai'il</option>
+                                <option value="Tit Mellil">Tit Mellil</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Prix</label>
+                        <input type="number" name=""  min="0" id="prix" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="closeIt" data-dismiss="modal">Close</button>
+                    <button type="button" id="addVol" class="btn btn-primary">Ajouter un vol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="js/axios.js"></script>
+        
+        <script>
+    function dateTime() {
+        var today = new Date();
+        var dd = today.getDate();
+
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+          dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+          mm = '0' + mm;
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        console.log(typeof (today));
+        return document.getElementById('dateDepart').min = today;
+      }
+      dateTime()
+              </script>
+              <script></script>
+
+</body>
+
+</html>
