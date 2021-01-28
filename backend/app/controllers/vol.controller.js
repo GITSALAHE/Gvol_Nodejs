@@ -27,6 +27,23 @@ exports.create = (req, res) => {
     });
 }
 
+exports.searchVol = (req, res) => {
+    console.log(req.params.villeDepart);
+    Vol.search(req.params.villeDepart, req.params.villeArrive, req.params.dateDepart, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found Vol .`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving Vol"
+                });
+            }
+        } else res.send(data);
+    })
+}
+
 exports.findAll = (req, res) => {
     Vol.getAll((err, data) => {
         if (err)

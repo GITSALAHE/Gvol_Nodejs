@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 26, 2021 at 09:17 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Hôte : 127.0.0.1
+-- Généré le :  jeu. 28 jan. 2021 à 17:18
+-- Version du serveur :  10.4.11-MariaDB
+-- Version de PHP :  7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gvol`
+-- Base de données :  `gvol`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation`
+-- Structure de la table `reservation`
 --
 
 CREATE TABLE `reservation` (
@@ -34,13 +35,21 @@ CREATE TABLE `reservation` (
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `telephone` int(11) NOT NULL,
-  `idVol` int(11) NOT NULL
+  `idVol` int(11) NOT NULL,
+  `nbPlace` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`idRes`, `code`, `nom`, `prenom`, `email`, `telephone`, `idVol`, `nbPlace`) VALUES
+(0, 'GVOL_3ad51f20-7aff-4d96-905c-d66026eb177a', 'Amine', 'Mohammed', 'bettaoui@gmail.com', 642436739, 18, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vol`
+-- Structure de la table `vol`
 --
 
 CREATE TABLE `vol` (
@@ -55,7 +64,7 @@ CREATE TABLE `vol` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `vol`
+-- Déchargement des données de la table `vol`
 --
 
 INSERT INTO `vol` (`idVol`, `villeDepart`, `villeArrive`, `dateDepart`, `heureDepart`, `nbPlace`, `escale`, `prix`) VALUES
@@ -64,37 +73,37 @@ INSERT INTO `vol` (`idVol`, `villeDepart`, `villeArrive`, `dateDepart`, `heureDe
 (18, 'Berrechid', 'Azemmour', '2021-01-29', '15:06', 3, 'Settat', 21);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `reservation`
+-- Index pour la table `reservation`
 --
 ALTER TABLE `reservation`
   ADD KEY `fk_idVol` (`idVol`);
 
 --
--- Indexes for table `vol`
+-- Index pour la table `vol`
 --
 ALTER TABLE `vol`
   ADD PRIMARY KEY (`idVol`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `vol`
+-- AUTO_INCREMENT pour la table `vol`
 --
 ALTER TABLE `vol`
   MODIFY `idVol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `reservation`
+-- Contraintes pour la table `reservation`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `fk_idVol` FOREIGN KEY (`idVol`) REFERENCES `vol` (`idVol`);

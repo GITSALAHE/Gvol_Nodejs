@@ -39,7 +39,24 @@ const Vol = function(vol) {
       result({ kind: "not_found" }, null);
     });
   };
+  Vol.search = (villeDepart, villeArrive, dateDepart, result) => {
+    sql.query(`SELECT * FROM vol WHERE villeDepart = '${villeDepart}' AND villeArrive = '${villeArrive}' AND dateDepart = '${dateDepart}'`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
   
+      if (res.length) {
+        console.log("found vol: ", res);
+        result(null, res);
+        return;
+      }
+  
+      result({ kind: "not_found" }, null);
+    })
+  }
+
   Vol.getAll = result => {
     sql.query("SELECT * FROM vol", (err, res) => {
       if (err) {

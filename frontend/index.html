@@ -104,34 +104,53 @@
                     <h1>Flights</h1><br />
 
                     <select name="LieuDepart" id="villeDepart" class="input pass">
-                        <option value=""></option>
+                        <option value="">Select City</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Berrechid">Berrechid</option>
+                        <option value="Boulaouane">Boulaouane</option>
+                        <option value="Bouskoura">Bouskoura</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Dar Bouazza">Dar Bouazza</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Guisser">Guisser</option>
+                        <option value="Mediouna">Mediouna</option>
+                        <option value="Mellila">Mellila</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Moulay Abdallah">Moulay Abdallah</option>
+                        <option value="Oulad Frej">Oulad Frej</option>
+                        <option value="Riah">Riah</option>
+                        <option value="Settat">Settat</option>
+                        <option value="Sidi Bennour">Sidi Bennour</option>
+                        <option value="Sidi Smai'il">Sidi Smai'il</option>
+                        <option value="Tit Mellil">Tit Mellil</option>
                     </select>
-                    <select name="LieuArrive" id="villeArrive" class="input pass"></select>
+                    <select name="LieuArrive" id="villeArrive" class="input pass">
+                        <option value="">Select City</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Berrechid">Berrechid</option>
+                        <option value="Boulaouane">Boulaouane</option>
+                        <option value="Bouskoura">Bouskoura</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Dar Bouazza">Dar Bouazza</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Guisser">Guisser</option>
+                        <option value="Mediouna">Mediouna</option>
+                        <option value="Mellila">Mellila</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Moulay Abdallah">Moulay Abdallah</option>
+                        <option value="Oulad Frej">Oulad Frej</option>
+                        <option value="Riah">Riah</option>
+                        <option value="Settat">Settat</option>
+                        <option value="Sidi Bennour">Sidi Bennour</option>
+                        <option value="Sidi Smai'il">Sidi Smai'il</option>
+                        <option value="Tit Mellil">Tit Mellil</option>
+                    </select>
                     <input type="date" class="input pass" id="dateVol">
                     <input type="time" name="" id="timeVol" class="input pass">
-                    <select name="" id="nbPlaces" class="input pass">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                    </select>
-                    <input type="submit" value="Show Flights" name="search" class="inputButton" onclick="return false" onmousedown="autoScrollTo('vols')" id="btn">
+                    <input type="submit" value="Show Flights" name="search" class="inputButton" onclick="return false"
+                        id="btnSearch">
                 </form>
             </div>
         </div>
@@ -167,44 +186,11 @@
                 </div>
             </div>
         </div>
+       
     </section>
-    <div class='container' id="vols">
-        <div class='row'>
-            <div class='card-body'>
-                <ul class='list-group mb-4' scope='row'>
-                    <li class='list-group-item'>Vol Numéro: <strong>
-                            <?php echo $vol['id_Vol'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Lieu Départ: <strong>
-                            <?php echo $vol['LieuDepart'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Lieu Arrive: <strong>
-                            <?php echo $vol['LieuArrive'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Date Départ: <strong>
-                            <?php echo $vol['DateDepart'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Date Arrive: <strong>
-                            <?php echo $vol['DateArrive'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Numéro des Places Disponible: <strong>
-                            <?php echo $vol['NbPlace'] ?>
-                        </strong></li>
-                    <li class='list-group-item'>Prix: <strong>
-                            <?php echo $vol['Prix'] ?>
-                        </strong></li>
-                    <div class='card-link'>
+   <div id="append">
 
-
-                        <a href='reservation.php' class='c-link'>Réserver
-                            <i class='fa fa-angle-right'></i><i class='fa fa-angle-right'></i>
-                        </a>
-
-
-                    </div>
-            </div>
-        </div>
-    </div>
+   </div>
     <footer>
         <div class='footer-container'>
             <div class='left-col'>
@@ -249,11 +235,29 @@
         </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+        <script src="js/axiosClient.js"></script>
+        
     <script>
-        function autoScrollTo(el) {
-            var top = $("#" + el).offset().top;
-            $("html, body").animate({ scrollTop: top }, 1000);
+        function dateTime() {
+            var today = new Date();
+            var dd = today.getDate() + 1;
+
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = yyyy + '-' + mm + '-' + dd;
+            console.log(typeof (today));
+            return document.getElementById('dateVol').min = today;
         }
+        dateTime()
     </script>
 </body>
 
