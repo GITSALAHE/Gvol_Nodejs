@@ -99,11 +99,20 @@
 
         <div class="col-md-6">
             <div id="logbox" style="background-color: #fff;">
-                <form action="" method="post">
+                <form autocomplete="off" action="" method="post">
 
                     <h1>Flights</h1><br />
 
-                    <select name="LieuDepart" id="villeDepart" class="input pass">
+                    
+                    <div class="form-group autocomplete">
+                        
+                        <input type="text" name="LieuDepart" id="villeDepart" class="input pass" placeholder="Select City Flight From">
+                    </div>
+                    <div class="form-group autocomplete">
+                        
+                        <input type="text" name="LieuArrive" id="villeArrive" class="input pass" placeholder="Select City Flight To">
+                    </div>
+                    <!-- <select  class="input pass">
                         <option value="">Select City</option>
                         <option value="Azemmour">Azemmour</option>
                         <option value="Berrechid">Berrechid</option>
@@ -124,29 +133,7 @@
                         <option value="Sidi Bennour">Sidi Bennour</option>
                         <option value="Sidi Smai'il">Sidi Smai'il</option>
                         <option value="Tit Mellil">Tit Mellil</option>
-                    </select>
-                    <select name="LieuArrive" id="villeArrive" class="input pass">
-                        <option value="">Select City</option>
-                        <option value="Azemmour">Azemmour</option>
-                        <option value="Berrechid">Berrechid</option>
-                        <option value="Boulaouane">Boulaouane</option>
-                        <option value="Bouskoura">Bouskoura</option>
-                        <option value="Bouznika">Bouznika</option>
-                        <option value="Casablanca">Casablanca</option>
-                        <option value="Dar Bouazza">Dar Bouazza</option>
-                        <option value="El Jadida">El Jadida</option>
-                        <option value="Guisser">Guisser</option>
-                        <option value="Mediouna">Mediouna</option>
-                        <option value="Mellila">Mellila</option>
-                        <option value="Mohammedia">Mohammedia</option>
-                        <option value="Moulay Abdallah">Moulay Abdallah</option>
-                        <option value="Oulad Frej">Oulad Frej</option>
-                        <option value="Riah">Riah</option>
-                        <option value="Settat">Settat</option>
-                        <option value="Sidi Bennour">Sidi Bennour</option>
-                        <option value="Sidi Smai'il">Sidi Smai'il</option>
-                        <option value="Tit Mellil">Tit Mellil</option>
-                    </select>
+                    </select> -->
                     <input type="date" class="input pass" id="dateVol">
                     <input type="time" name="" id="timeVol" class="input pass">
                     <input type="submit" value="Show Flights" name="search" class="inputButton" onclick="return false"
@@ -238,7 +225,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
         <script src="js/axiosClient.js"></script>
-        
+        <script src="js/autoComplete.js"></script>
     <script>
         function dateTime() {
             var today = new Date();
@@ -258,6 +245,14 @@
             return document.getElementById('dateVol').min = today;
         }
         dateTime()
+
+        autocomplete(document.getElementById('villeDepart'), fillDepart()); 
+       
+        autocomplete(document.getElementById('villeArrive'), fillArriver());
+         
+        
+        
+        
     </script>
 </body>
 

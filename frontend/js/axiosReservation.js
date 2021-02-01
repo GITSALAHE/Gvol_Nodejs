@@ -3,8 +3,8 @@ const urlParams = new URLSearchParams(queryString);
 const place = parseInt(urlParams.get('nbPlace'));
 var id = parseInt(urlParams.get('idVol'))
 var prix = parseInt(urlParams.get('price'));
-    var selectAppend = document.getElementById('nbPlaceAppend');
-    var html = '';
+var selectAppend = document.getElementById('nbPlaceAppend');
+var html = '';
 for (let index = 1; index <= place; index++) {
     html += `<option value="${index}">${index}</option>`;
     

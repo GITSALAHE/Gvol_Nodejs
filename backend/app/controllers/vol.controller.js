@@ -55,16 +55,27 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.findOne = (req, res) => {
-    Vol.findById(req.params.volId, (err, data) => {
+exports.findAllVilleDepart =  (req, res) => {
+    Vol.getAllVillesDepart((err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving fields."
+            });
+        else res.send(data);
+    });
+};
+
+exports.findAllVilleArriver = (req, res) => {
+    Vol.getAllVilleArriver((err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Vol with id ${req.params.volId}.`
+                    message: "Not found villeArriver "
                 });
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Vol with id " + req.params.volId
+                    message: "Error retrieving villeArriver  :"
                 });
             }
         } else res.send(data);

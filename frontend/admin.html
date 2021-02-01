@@ -22,45 +22,39 @@
 
 <body>
     <div class="container-fluid">
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#exampleModal"
-            data-whatever="@mdo">Ajouter un nouveau dossier</button>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-dark mt-2 mr-2" data-toggle="modal" data-target="#addModale"
+            data-whatever="@mdo">Ajouter Un Vol</button>
+            <button type="button" class="btn btn-dark mt-2 mr-2" data-toggle="modal" data-target="#updateModale"
+            data-whatever="@mdo">Modifier Un Vol</button>
+            <button type="button" class="btn btn-dark mt-2 mr-2" data-toggle="modal" data-target="#deleteModale"
+            data-whatever="@mdo">Supprimer Un Vol</button>
+          </div>
+       
 
         <div class="card shadow mt-2 mb-4">
 
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Les dossiers</h6>
+                <h3 class="m-0 font-weight-bold text-success text-center">Tous les Vols Dispanible</h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-dark table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Prenom</th>
-                                <th>Nom</th>
-                                <th>CIN</th>
-                                <th>Email</th>
-                                <th>Telephone</th>
+                                <th>villeDepart</th>
+                                <th>villeArriver</th>
+                                <th>Date Depart</th>
+                                <th>Heure Depart</th>
+                                <th>Nombre places Totale</th>
+                                <th>Nombre places Dispo</th>
                                 <th>Escale</th>
-                                <th>prix</th>
-                                <th>Action </th>
+                                <th>Prix </th>
 
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Prenom</th>
-                                <th>Nom</th>
-                                <th>CIN</th>
-                                <th>Email</th>
-                                <th>Telephone</th>
-                                <th>Escale</th>
-                                <th>prix</th>
-                                <th>Action </th>
-
-                            </tr>
-                        </tfoot>
+                        
                         <tbody id="tbody">
 
                         </tbody>
@@ -73,7 +67,7 @@
     </div>
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="addModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -195,6 +189,138 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="updateModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">ID Vol</label>
+                    <select name="" class="form-control" id="idVol">
+                    </select>
+                    <label for="">Ville depart</label>
+                    <select name="" class="form-control" id="villeDepartUpd">
+                        <option value="">Select City</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Berrechid">Berrechid</option>
+                        <option value="Boulaouane">Boulaouane</option>
+                        <option value="Bouskoura">Bouskoura</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Dar Bouazza">Dar Bouazza</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Guisser">Guisser</option>
+                        <option value="Mediouna">Mediouna</option>
+                        <option value="Mellila">Mellila</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Moulay Abdallah">Moulay Abdallah</option>
+                        <option value="Oulad Frej">Oulad Frej</option>
+                        <option value="Riah">Riah</option>
+                        <option value="Settat">Settat</option>
+                        <option value="Sidi Bennour">Sidi Bennour</option>
+                        <option value="Sidi Smai'il">Sidi Smai'il</option>
+                        <option value="Tit Mellil">Tit Mellil</option>
+                    </select>
+
+
+                </div>
+                <div class="form-group">
+                    <label for="">Ville arrive</label>
+
+                    <select name="" class="form-control" id="villeArriveUpd">
+                        <option value="">Select City</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Berrechid">Berrechid</option>
+                        <option value="Boulaouane">Boulaouane</option>
+                        <option value="Bouskoura">Bouskoura</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Dar Bouazza">Dar Bouazza</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Guisser">Guisser</option>
+                        <option value="Mediouna">Mediouna</option>
+                        <option value="Mellila">Mellila</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Moulay Abdallah">Moulay Abdallah</option>
+                        <option value="Oulad Frej">Oulad Frej</option>
+                        <option value="Riah">Riah</option>
+                        <option value="Settat">Settat</option>
+                        <option value="Sidi Bennour">Sidi Bennour</option>
+                        <option value="Sidi Smai'il">Sidi Smai'il</option>
+                        <option value="Tit Mellil">Tit Mellil</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Date depart</label>
+                    <input type="date" name="" id="dateDepartUpd" min="" class="form-control" placeholder=""
+                        aria-describedby="helpId">
+
+                </div>
+                <div class="form-group">
+                    <label for="">Heure depart</label>
+                    <input type="time" name="" id="heureDepartUpd" class="form-control" placeholder=""
+                        aria-describedby="helpId">
+
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre places</label>
+                    <input type="number" name="" id="nbPlacesUpd" min="0" class="form-control" placeholder=""
+                        aria-describedby="helpId">
+
+                </div>
+                <div class="form-group">
+                    <label for="">Ville escale</label>
+
+                    <select name="" class="form-control" id="escaleUpd">
+                        <option value="">Select City</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Berrechid">Berrechid</option>
+                        <option value="Boulaouane">Boulaouane</option>
+                        <option value="Bouskoura">Bouskoura</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Dar Bouazza">Dar Bouazza</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Guisser">Guisser</option>
+                        <option value="Mediouna">Mediouna</option>
+                        <option value="Mellila">Mellila</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Moulay Abdallah">Moulay Abdallah</option>
+                        <option value="Oulad Frej">Oulad Frej</option>
+                        <option value="Riah">Riah</option>
+                        <option value="Settat">Settat</option>
+                        <option value="Sidi Bennour">Sidi Bennour</option>
+                        <option value="Sidi Smai'il">Sidi Smai'il</option>
+                        <option value="Tit Mellil">Tit Mellil</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Prix</label>
+                    <input type="number" name="" min="0" id="prixUpd" class="form-control" placeholder=""
+                        aria-describedby="helpId">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeIt" data-dismiss="modal">Close</button>
+                <button type="button" id="updateVol" class="btn btn-primary">Modifier</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 

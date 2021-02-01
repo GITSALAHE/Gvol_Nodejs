@@ -1,4 +1,36 @@
+
 var btnSearch = document.getElementById("btnSearch");
+const villesDepart = [];
+const villesArriver = [];
+
+
+function fillDepart() {
+    axios.get("http://localhost:3000/fillInputVilleDepart")
+        .then(function (response) {
+        
+            response.data.forEach(element => {
+                villesDepart.push(element.villeDepart);
+                console.log(element.villeDepart);
+            });
+
+        })
+    return villesDepart;
+}
+
+function fillArriver() {
+    axios.get("http://localhost:3000/fillInputVilleArriver")
+        .then(function (response) {
+        
+            response.data.forEach(element => {
+                villesArriver.push(element.villeArrive);
+                console.log(element.villeArrive);
+            });
+
+        })
+    return villesArriver;
+}
+
+
 btnSearch.addEventListener('mousedown', () => {
     
     var villeDepart = document.getElementById("villeDepart").value;

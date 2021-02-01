@@ -57,6 +57,32 @@ const Vol = function(vol) {
     })
   }
 
+  Vol.getAllVillesDepart = result => {
+    sql.query("SELECT villeDepart FROM vol", (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+  
+      console.log("villeDepart: ", res);
+      result(null, res);
+    });
+  };
+
+  Vol.getAllVilleArriver = result => {
+    sql.query("SELECT villeArrive FROM vol ", (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+  
+      console.log("villeArriver: ", res);
+      result(null, res);
+    });
+  };
+
   Vol.getAll = result => {
     sql.query("SELECT * FROM vol", (err, res) => {
       if (err) {
@@ -72,7 +98,7 @@ const Vol = function(vol) {
   
   Vol.updateById = (id, dataVol, result) => {
     sql.query(
-      "UPDATE vol SET villeDepart=?, villeArrive=?, dateDepart=?, heureDepart = ?, nbPlace = ? WHERE idVol = ?",
+      "UPDATE vol SET villeDepart=?, villeArrive=?, dateDepart=?, heureDepart = ?, nbPlace = ?, escale = ?, prix = ? WHERE idVol = ?",
       [dataVol.villeDepart, dataVol.villeArrive, dataVol.dateDepart, dataVol.heureDepart, dataVol.nbPlace, dataVol.escale, dataVol.prix, id],
       (err, res) => {
         if (err) {
